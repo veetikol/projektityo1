@@ -2,7 +2,7 @@
 Ohjelmisto 1 -kurssin projektityö
 
 Engineers:
-Ville Kurikka \n
-Veeti Kolanen \n
-Villiam Kuusisto \n
+Ville Kurikka,
+Veeti Kolanen, 
+Villiam Kuusisto, 
 Jesse "J3-ss3" Nieminen 
