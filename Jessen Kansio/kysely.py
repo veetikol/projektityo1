@@ -57,4 +57,4 @@ italyhints = ["1. Leads UNESCO's statistics on world heritage sites", "2. Milla 
 sloveniahints = ["1. World famous 'Postojna' cave system is located in this country", "2. This country is mainly mountainous, and more than 90 percent of the country is more than 200 meters above sea level", "3. The capital of this country is a charming city named Ljubljana"]
 czechrepublichints = ["1. World known ice-hockey player with a iconic mullet haircut was born here", "2. Federation which splitted into two separated countries in 1993", "3. Pilsner beer originates from this country"]
 maltahints = ["1. Is known by taxfree casino licenses", "2. This country consista by many islands", "3. World's tenth-smallest country. With a total area of 316 squeare kilometers"]
-hungaryhints 
+hungaryhints = ["This country is known by its traditional "]
