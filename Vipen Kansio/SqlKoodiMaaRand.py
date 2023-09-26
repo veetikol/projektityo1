@@ -10,5 +10,6 @@ def maat():
     kursori = yhteys.cursor()
     kursori.execute(sql)
     tulos = kursori.fetchone()
+    maalista = []
     return tulos
 
