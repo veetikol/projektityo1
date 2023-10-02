@@ -24,16 +24,22 @@ maltahints = ["1. Is known by taxfree casino licenses", "2. This country consist
 hungaryhints = ["1. This country is known by its traditional spicy meat soup", "2. Local currency is known as HUF", "3. Tonava river splits this country at the middle"]
 austriahints = ["1. Samuli Edelmann has drunk wine in this country", "2. Most of the landscape of this country consists of the Alps", "3. In which country was Mozart born in?"]
 
+hints = (luxembourghints, norwayhints, polandhints, swedenhints, latviahints, lithuaniahints,
+         spainhints, albaniahints, bulgariahints, icelandhints, belgiumhints, germanyhints,
+         estoniahints, finlandhints, ukhints, irelandhints, croatiahints, francehints,
+         greecehints, italyhints, sloveniahints, czechrepublichints, maltahints, hungaryhints,
+         austriahints)
+
 countries = {"Luxembourg":luxembourghints, "Norway":norwayhints, "Poland":polandhints, "Sweden":swedenhints, "Latvia":latviahints,
              "Lithuania":lithuaniahints, "Spain":spainhints, "Albania":albaniahints, "Bulgaria":bulgariahints, "Iceland":icelandhints,
              "Belgium":belgiumhints, "Germany":germanyhints, "Estonia":estoniahints, "Finland":finlandhints, "United Kingdom" or "UK":ukhints,
              "Ireland":irelandhints, "Croatia":croatiahints, "France":francehints, "Greece":greecehints, "Italy":italyhints,
              "Slovenia":sloveniahints, "Czech Republic":czechrepublichints, "Malta":maltahints, "Hungary":hungaryhints, "Austria":austriahints}
 
-for x in maat():
-    print(x)
-    command = input("Anna komento (Fly/Buy new hint)")
-    if command == "fly":
-        break
-    elif command == "Buy new hint":
-        pass
+#for x in maat():
+#    print(x)
+#    command = input("Anna komento (Fly/Buy new hint)")
+#    if command == "fly":
+#        break
+#    elif command == "Buy new hint":
+#        pass

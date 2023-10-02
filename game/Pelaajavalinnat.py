@@ -15,7 +15,7 @@ def maatsekki(rahat, location, goal):
         # TÄhän pitänee tehdä, että se hakee seuraavan vihjeen.
     return
 
-def pelaajavalinta(maa, sijainti):
+def pelaajavalinta(sijainti, maaLista, rahat, tavoite):
     print("You can either buy a new clue for 100 euros, or fly to a new country.")
     syöte = input("Type (buy) to buy a new clue or (fly) to fly to a new country: ")
     while true:
