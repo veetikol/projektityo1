@@ -45,7 +45,7 @@ while True:
     print(f"The first country you land in is: {sijainti}! You have a lot of fun touring the different attractions there.")
     print(f"You have arrived to {sijainti} Airport and now you are to guess the next country.")
     päämäärä = maat()
-#    vihje = haeVihje(sijainti, 1)
+    vihje = haeVihje(sijainti, 1)
     pelaajavalinta(sijainti, Vihjeet.country_names, rahat, päämäärä)
 
 
