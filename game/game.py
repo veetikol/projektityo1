@@ -16,8 +16,8 @@ yhteys = mysql.connector.connect(
     autocommit=True
     )
 
-rahat = 0 # Rahan määrää pitänee kontrolloida jokaisen funktion sisällä.
-#tavoite = maat() # Tämä määritellään sql-haulla
+rahat = 1000 # Rahan määrää pitänee kontrolloida jokaisen funktion sisällä.
+sijainti = maat()[0]
 
 pelaajanimi = input(f"Welcome! What's your name?: ")
 print(f"Hello {pelaajanimi}!")
@@ -30,6 +30,7 @@ def instructions():
     print("After 3 tries, you will be given a sanction of 5 euros and flown to the next country.")
 
 while True:
+    instructions()
     readyInput = input("Are you ready to begin? (y/n): ")
     if readyInput == "n":
         print("Here are the instructions again: ")
@@ -43,6 +44,10 @@ while True:
     #sijainti = maat()
     print(f"The first country you land in is: {sijainti}! You have a lot of fun touring the different attractions there.")
     print(f"You have arrived to {sijainti} Airport and now you are to guess the next country.")
+    päämäärä = maat()
+#    vihje = haeVihje(sijainti, 1)
+    pelaajavalinta(sijainti, Vihjeet.country_names, rahat, päämäärä)
+
 
 
 

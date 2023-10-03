@@ -36,6 +36,9 @@ countries = {"Luxembourg":luxembourghints, "Norway":norwayhints, "Poland":poland
              "Ireland":irelandhints, "Croatia":croatiahints, "France":francehints, "Greece":greecehints, "Italy":italyhints,
              "Slovenia":sloveniahints, "Czech Republic":czechrepublichints, "Malta":maltahints, "Hungary":hungaryhints, "Austria":austriahints}
 
+country_names = ["Luxembourg", "Norway", "Poland", "Sweden", "Latvia", "Lithuania", "Spain",
+                 "Albania", "Bulgaria", "Iceland", "Belgium", "Germany", "Estonia", "Finland", "United Kingdom / UK"
+                 "Ireland", "Croatia", "France", "Greece", "Italy", "Slovenia", "Czech Republic", "Malta", "Hungary", "Austria"]
 #for x in maat():
 #    print(x)
 #    command = input("Anna komento (Fly/Buy new hint)")
