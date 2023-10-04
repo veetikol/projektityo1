@@ -11,22 +11,6 @@ yhteys = mysql.connector.connect(
     autocommit=True
     )
 
-
-
-
-import random
-import mysql.connector
-yhteys = mysql.connector.connect(
-    host='127.0.0.1',
-    port=3306,
-    database='flight_game',
-    user='user1',
-    password='password1',
-    autocommit=True
-)
-
-
-
 def maat():
     sql = "SELECT country.name, airport.name FROM country, airport"
     sql += " WHERE airport.iso_country = country.iso_country AND country.continent = 'EU' AND airport.type = 'large_airport'"
