@@ -1,6 +1,6 @@
 import Vihjeet
 
-def haeVihje(maa, monesVihje):
+def haeVihje(päämäärä, monesVihje):
     for country in Vihjeet.countries:
         if country == päämäärä:
             return Vihjeet.countries[päämäärä][monesVihje - 1]

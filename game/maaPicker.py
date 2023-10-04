@@ -22,7 +22,7 @@ def maat():
 
 
 
-def maaLentoSanakirja():
+'''def maaLentoSanakirja():
     sql = "SELECT country.name, airport.name FROM country, airport"
     sql += " WHERE airport.iso_country = country.iso_country AND country.continent = 'EU' AND airport.type = 'large_airport'"
     sql += " ORDER by RAND()"
@@ -33,7 +33,7 @@ def maaLentoSanakirja():
         tulos = kursori.fetchone()
         if tulos[0] != countries:
             countries[tulos[0]] = tulos[1]
-    return countries
+    return countries'''
 
 '''poistaMaa = maaLentoSanakirja()
 tulos = maat()

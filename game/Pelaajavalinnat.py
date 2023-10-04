@@ -1,8 +1,10 @@
+from haeVihje import haeVihje
+
 rahat = 0
 
-def rahatsekki(rahat):
+"""def rahatsekki(rahat):
     print(f"You have currently {rahat} euros")
-    return
+    return"""
 
 
 def maatsekki(rahat, location, goal):
@@ -15,18 +17,39 @@ def maatsekki(rahat, location, goal):
         # TÄhän pitänee tehdä, että se hakee seuraavan vihjeen.
     return
 
-def pelaajavalinta(sijainti, maaLista, rahat, tavoite):
+def pelaajavalinta(maaLista, päämäärä):
     print("You can either buy a new clue for 100 euros, or fly to a new country.")
-    syöte = input("Type (buy) to buy a new clue or (fly) to fly to a new country: ")
-    while true:
+    syöte = input("Type (buy) to buy a new clue or (guess) to make a guess: ")
+    global rahat
+    while True:
+        if rahat < 100:
+            print("You have ran out of money.")
+            print("Game over.")
+            break
         if syöte == "buy":
-            #Tähän se, että haetaan uusi vihje kohdemaasta
-        if syöte == "fly":
-            maa = input("Type the name of the country you want to fly to: ")
-            if maa in #lista maista:
-                sijainti = maa
-                break
-            else:
-                syöte = input("You have typed an invalid country, please try again: ")
+            haeVihje(päämäärä, 1)
+        elif syöte == "guess":
+            syöte2 = input("type the name of the country, or type (list) to get a full list of possible countries: ")
+            if syöte2 == "list":
+                print(maaLista)
+                syöte = input("Type (buy) to buy a new clue or (guess) to make a guess: ")
+            if syöte2 == päämäärä: #Tulostetaan onnitteluviesti, vaihdetaan sijainti ja vähennetään rahoista
+                print("Congratulations! You have guessed the correct country")
+                print("Flying to your new destination...")
+                sijainti = päämäärä
 
-rahatsekki()
+                rahat -= 100
+                break
+            if syöte2 != päämäärä and syöte2 in maaLista: #Tsekataan, että arvaus on maalistassa, ja vähennetään rahoista.
+                print("You have made an incorrect guess.")
+                rahat -= 100
+                syöte = input("Type (buy) to buy a new clue or (guess) to make a guess: ")
+            else:
+                print("You have typed an invalid country, please try again: ")
+                syöte = input("Type (buy) to buy a new clue or (guess) to make a guess: ")
+
+        else:
+                print("You have typed an invalid command, please try again: ")
+                syöte = input("Type (buy) to buy a new clue or (guess) to make a guess: ")#Siirrytään suoraan loopin alkuun
+    return päämäärä
+
