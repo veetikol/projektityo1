@@ -35,10 +35,10 @@ def maaLentoSanakirja():
             countries[tulos[0]] = tulos[1]
     return countries
 
-poistaMaa = maaLentoSanakirja()
+'''poistaMaa = maaLentoSanakirja()
 tulos = maat()
 if tulos in poistaMaa:
     print(tulos)
-    poistaMaa.pop(tulos)
+    poistaMaa.pop(tulos)'''
 
 print(poistaMaa)

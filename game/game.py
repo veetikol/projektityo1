@@ -2,10 +2,10 @@ from geopy.distance import geodesic
 import mysql.connector
 import sqlyhteys
 from kuljettumatka import calculateDistance
-from maaPicker import maat, maaLentoSanakirja
+from maaPicker import maat
 from Pelaajavalinnat import maatsekki, pelaajavalinta, maatsekki
 import Vihjeet
-import haeVihje
+from haeVihje import haeVihje
 
 yhteys = mysql.connector.connect(
     host='127.0.0.1',
@@ -15,6 +15,45 @@ yhteys = mysql.connector.connect(
     password='veetik',
     autocommit=True
     )
+
+'''def maat():
+    for x in listamaista:
+        print(x)
+        print(listamaista[x])
+        listamaista.pop(x)
+        break'''
+
+
+
+'''def maaLentoSanakirja():
+    sql = "SELECT country.name, airport.name FROM country, airport"
+    sql += " WHERE airport.iso_country = country.iso_country AND country.continent = 'EU' AND airport.type = 'large_airport'"
+    sql += " ORDER by RAND()"
+    kursori = yhteys.cursor(buffered=True)
+    kursori.execute(sql)
+    countries = {}
+    while len(countries) < 37:  # tämä järjestää kaikki maat sanakirjaan
+        tulos = kursori.fetchone()
+        if tulos[0] != countries:
+            countries[tulos[0]] = tulos[1]
+    return countries'''
+
+'''listamaista = maaLentoSanakirja()'''
+'''def maaLentoSanakirjav2():
+    sql = "SELECT country.name, airport.name FROM country, airport"
+    sql += " WHERE airport.iso_country = country.iso_country AND country.continent = 'EU' AND airport.type = 'large_airport'"
+    sql += " ORDER by RAND() LIMIT 37"
+    kursori = yhteys.cursor(buffered=True)
+    kursori.execute(sql)
+    countries = {}
+    while True:
+        tulos = kursori.fetchone()
+        if not tulos:
+            break
+        country_name = tulos[0]
+        airport_name = tulos[1]
+        countries[country_name] = airport_name
+    return countries'''
 
 rahat = 1000 # Rahan määrää pitänee kontrolloida jokaisen funktion sisällä.
 sijainti = maat()[0]
@@ -41,7 +80,7 @@ while True:
 print("Your journey begins!")
 
 while True:
-    #sijainti = maat()
+    sijainti = maat()
     print(f"The first country you land in is: {sijainti}! You have a lot of fun touring the different attractions there.")
     print(f"You have arrived to {sijainti} Airport and now you are to guess the next country.")
     päämäärä = maat()
@@ -50,9 +89,10 @@ while True:
         päämäärä = maat()
         poistaMaa.pop(päämäärä)
     else:
-        print("Congratulations, you have successfully completed your journey through Europe!")
+        print("Congratulations, you have successfully completed your journey through Europe!")'''
     vihje = haeVihje(sijainti, 1)
-    pelaajavalinta(sijainti, Vihjeet.country_names, rahat, päämäärä)
+    print(vihje)
+    pelaajavalinta(Vihjeet.country_names, päämäärä)
 
 
 
