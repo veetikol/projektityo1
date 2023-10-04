@@ -2,7 +2,7 @@ from geopy.distance import geodesic
 import mysql.connector
 import sqlyhteys
 from kuljettumatka import calculateDistance
-from maaPicker import maat
+from maaPicker import maat, maaLentoSanakirja
 from Pelaajavalinnat import maatsekki, pelaajavalinta, maatsekki
 import Vihjeet
 import haeVihje
@@ -45,6 +45,12 @@ while True:
     print(f"The first country you land in is: {sijainti}! You have a lot of fun touring the different attractions there.")
     print(f"You have arrived to {sijainti} Airport and now you are to guess the next country.")
     päämäärä = maat()
+    poistaMaa.pop(päämäärä)
+    if päämäärä in poistaMaa:
+        päämäärä = maat()
+        poistaMaa.pop(päämäärä)
+    else:
+        print("Congratulations, you have successfully completed your journey through Europe!")
     vihje = haeVihje(sijainti, 1)
     pelaajavalinta(sijainti, Vihjeet.country_names, rahat, päämäärä)
 
