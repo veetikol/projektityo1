@@ -39,10 +39,3 @@ countries = {"Luxembourg":luxembourghints, "Norway":norwayhints, "Poland":poland
 country_names = ["Luxembourg", "Norway", "Poland", "Sweden", "Latvia", "Lithuania", "Spain",
                  "Albania", "Bulgaria", "Iceland", "Belgium", "Germany", "Estonia", "Finland", "United Kingdom / UK"
                  "Ireland", "Croatia", "France", "Greece", "Italy", "Slovenia", "Czech Republic", "Malta", "Hungary", "Austria"]
-#for x in maat():
-#    print(x)
-#    command = input("Anna komento (Fly/Buy new hint)")
-#    if command == "fly":
-#        break
-#    elif command == "Buy new hint":
-#        pass

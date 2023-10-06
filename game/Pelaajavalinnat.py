@@ -1,4 +1,5 @@
 from haeVihje import haevihje
+from gamev2 import maalista
 
 rahat = 0
 

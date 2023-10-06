@@ -45,4 +45,7 @@ listamuuttuja += 1
 while True:
     print(f"The first country you land in is: {sijainti}! You have a lot of fun touring the different attractions there.")
     print(f"You have arrived to {sijainti} Airport and now you are to guess the next country.")
+    print("Your first clue:")
+    print(haevihje(päämäärä))
     pelaajavalinta()
+

@@ -43,5 +43,3 @@ tulos = maat()
 if tulos in poistaMaa:
     print(tulos)
     poistaMaa.pop(tulos)'''
-
-print(poistaMaa)
