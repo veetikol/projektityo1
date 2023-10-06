@@ -1,4 +1,4 @@
-from haeVihje import haeVihje
+from haeVihje import haevihje
 
 rahat = 0
 
@@ -17,39 +17,74 @@ def maatsekki(rahat, location, goal):
         # TÄhän pitänee tehdä, että se hakee seuraavan vihjeen.
     return
 
-def pelaajavalinta(maaLista, päämäärä):
-    print("You can either buy a new clue for 100 euros, or fly to a new country.")
-    syöte = input("Type (buy) to buy a new clue or (guess) to make a guess: ")
+
+def pelaajavalinta():
+    print("Voit joko ostaa uuden vihjeen 100 eurolla, tai veikata maata")
+    syöte = input("kirjoita (osta) ostaaksesi vihjeen, tai (veikkaa) veikataksesi kohdetta: ")
+
+    global sijainti
     global rahat
+    global päämäärä
+    global listamuuttuja
+    global vihjeindeksi
+
     while True:
         if rahat < 100:
-            print("You have ran out of money.")
-            print("Game over.")
+            print("Hävisit pelin")
             break
-        if syöte == "buy":
-            haeVihje(päämäärä, 1)
-        elif syöte == "guess":
-            syöte2 = input("type the name of the country, or type (list) to get a full list of possible countries: ")
-            if syöte2 == "list":
-                print(maaLista)
-                syöte = input("Type (buy) to buy a new clue or (guess) to make a guess: ")
-            if syöte2 == päämäärä: #Tulostetaan onnitteluviesti, vaihdetaan sijainti ja vähennetään rahoista
-                print("Congratulations! You have guessed the correct country")
-                print("Flying to your new destination...")
-                sijainti = päämäärä
-
+        if syöte == "osta":
+            if vihjeindeksi <= 2:
+                print("Uusi vihje!")
+                haevihje(päämäärä)
                 rahat -= 100
-                break
-            if syöte2 != päämäärä and syöte2 in maaLista: #Tsekataan, että arvaus on maalistassa, ja vähennetään rahoista.
-                print("You have made an incorrect guess.")
-                rahat -= 100
-                syöte = input("Type (buy) to buy a new clue or (guess) to make a guess: ")
+                print(f"Rahasi: {rahat} euroa")
             else:
-                print("You have typed an invalid country, please try again: ")
-                syöte = input("Type (buy) to buy a new clue or (guess) to make a guess: ")
-
+                print(f"Kohdemaasi on {päämäärä}. Sinua sakotetaan 100 euroa")
+                rahat -= 100
+                print(rahat)
+                if rahat < 100:
+                    print("Hävisit pelin")
+                    break
+                print("Lennetään kohteeseen...")
+                sijainti = päämäärä
+                listamuuttuja += 1
+                päämäärä = maalista[listamuuttuja]
+                vihjeindeksi = 0
+                print("Uusi vihje: ")
+                haevihje(päämäärä)
+            if rahat < 100:
+                print("Rahasi loppuivat, peli päättyy")
+                break
+            syöte = input("kirjoita (osta) ostaaksesi vihjeen, tai (veikkaa) veikataksesi kohdetta: ")
+        elif syöte == "veikkaa":
+            syöte2 = input("Kirjoita joko maan nimi, tai kirjoita (lista) tulostaaksesi listan mahdollisista maista: ")
+            if syöte2 == "lista":
+                print(maalista)
+                syöte = input("kirjoita (osta) ostaaksesi vihjeen, tai (veikkaa) veikataksesi kohdetta: ")
+                syöte2 = None
+            elif syöte2 == päämäärä:
+                print("Onneksi olkoon, arvasit oikean valtion")
+                print("Lennetään kohteeseen...")
+                sijainti = päämäärä
+                rahat -= 100
+                vihjeindeksi = 0
+                listamuuttuja += 1
+                päämäärä = maalista[listamuuttuja]
+                print(rahat)
+                if rahat < 100:
+                    print("Pääsit perille, mutta rahasi loppuivat. Peli päättyy")
+                    break
+                break
+            elif syöte2 != päämäärä and syöte2 in maalista:
+                print("Arvasit väärin")
+                rahat -= 100
+                print(f"rahasi:{rahat}")
+                print("kirjoita (osta) ostaaksesi vihjeen, tai (veikkaa) veikataksesi kohdetta: ")
+            else:
+                print("Kirjoittamasi maa ei ole vaihtoeho")
+                syöte = input("kirjoita (osta) ostaaksesi vihjeen, tai (veikkaa) veikataksesi kohdetta: ")
         else:
-                print("You have typed an invalid command, please try again: ")
-                syöte = input("Type (buy) to buy a new clue or (guess) to make a guess: ")#Siirrytään suoraan loopin alkuun
-    return päämäärä
+            print("Paska komento")
+            syöte = input("kirjoita (osta) ostaaksesi vihjeen, tai (veikkaa) veikataksesi kohdetta: ")
+    return
 

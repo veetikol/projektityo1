@@ -1,10 +1,11 @@
 import Vihjeet
 
-def haeVihje(päämäärä, monesVihje):
-    for country in Vihjeet.countries:
-        if country == päämäärä:
-            return Vihjeet.countries[päämäärä][monesVihje - 1]
+def haevihje(päämäärä):
+    global vihjeindeksi
+    for a in Vihjeet.countries:
+        if a == päämäärä:
+            print(Vihjeet.countries[päämäärä][vihjeindeksi])
+            vihjeindeksi += 1
+    return
 
-vihje = haeVihje("Sweden", 2)
-print(vihje)
 
