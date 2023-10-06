@@ -2,14 +2,18 @@ import random
 import mysql.connector
 import sqlyhteys
 
+
+import random
 yhteys = mysql.connector.connect(
     host='127.0.0.1',
     port=3306,
     database='flight_game',
     user='root',
-    password='veetik',
+    password='aitog',
     autocommit=True
     )
+
+
 
 def maat():
     sql = "SELECT country.name, airport.name FROM country, airport"
