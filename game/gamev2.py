@@ -119,6 +119,7 @@ for y in sqlhaku:
 
 listamuuttuja = 0
 vihjeindeksi = 0
+kuljettumatka = 0
 rahat = 1000
 sijainti = maalista[listamuuttuja]
 listamuuttuja += 1
