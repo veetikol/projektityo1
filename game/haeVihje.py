@@ -1,5 +1,4 @@
 import Vihjeet
-
 def haevihje(päämäärä):
     global vihjeindeksi
     for a in Vihjeet.countries:
