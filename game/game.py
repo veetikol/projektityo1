@@ -6,6 +6,7 @@ from maaPicker import maat
 from Pelaajavalinnat import maatsekki, pelaajavalinta, maatsekki
 import Vihjeet
 from haeVihje import haeVihje
+import random
 
 yhteys = mysql.connector.connect(
     host='127.0.0.1',
