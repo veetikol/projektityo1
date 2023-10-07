@@ -23,6 +23,18 @@ czechrepublichints = ["1. World known ice-hockey player with a iconic mullet hai
 maltahints = ["1. Is known by taxfree casino licenses", "2. This country consista by many islands", "3. World's tenth-smallest country. With a total area of 316 squeare kilometers"]
 hungaryhints = ["1. This country is known by its traditional spicy meat soup", "2. Local currency is known as HUF", "3. Tonava river splits this country at the middle"]
 austriahints = ["1. Samuli Edelmann has drunk wine in this country", "2. Most of the landscape of this country consists of the Alps", "3. In which country was Mozart born in?"]
+portugalhints = ["1. This country is known for its portwines", "2. This country is the 2016 football European champion", "3. This country is located at the tip of the Iberian peninsula"]
+romaniahints = ["1. The Carpathian mountain range runs through the middle of this country.", "2. The currency used in this country is leu", "3. The famous region of Transylvania is located in this country"]
+netherlandhints = ["1. This country is known for its EDM culture", "2. This country is known for its coffee shops", "3. This countrys capital is Amsterdam"]
+switzerlandhints = ["1. This country is well known for their policy of neutrality", "2. This country is well known for its culture of watch-making", "3. The Red Cross was founded in this country"]
+belarushints = ["1. This country's official dish is called draniki", "2. This country's president is the longest serving president in Europe", "3. This country's capital is Minsk"]
+northmacedoniahints = ["1. This country changed its name as recently as 2019", "2. This country’s flag depicts a sun.", "3. This country’s capital city is Skopje"]
+ukrainehints = ["1. This country is the second biggest country in Europe", "2. This country's currency is called hryvnia", "3. This country is on an ongoing war with russia"]
+serbiahints = ["1. This country has the worlds oldest Orthodox church, the Sopočan monastery", "2. This country is a landlocked country, located east of Bosnia & Herzegovina", "3. This country’s capital is Belgrade"]
+montenegrohints = ["1. This country’s name means The black mountain in English", "2. This country uses the euro as its currency, even thought it is not part of the Eurozone", "3. This country is located next north of Albania"]
+russiahints = ["1. This country sold the region of Alaska to USA in 1867", "2. This country has the largest population in Europe", "3. This is the largest country in the world"]
+slovakiahints = ["1. This country used to be a joint state with the Czech Republic.", "2. This country’s flag has a double cross ", "3. This country’s capital city is Bratislava"]
+denmarkhints = ["1. This country is known for a very popular toy manufacturer", "2. This country is a nordic country", "3. This countrys capital is Copenhagen"]
 
 hints = (luxembourghints, norwayhints, polandhints, swedenhints, latviahints, lithuaniahints,
          spainhints, albaniahints, bulgariahints, icelandhints, belgiumhints, germanyhints,

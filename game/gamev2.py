@@ -4,9 +4,11 @@ from kuljettumatka import calculateDistance
 from maaPicker import maat
 from maaPicker import yhteys
 import Vihjeet
+from geopy.distance import geodesic
 
 def haevihje(päämäärä):
     global vihjeindeksi
+    vihjenyt = None
     for a in Vihjeet.countries:
         if a == päämäärä:
             print(Vihjeet.countries[päämäärä][vihjeindeksi])
@@ -132,10 +134,19 @@ print(sijainti)
 päämäärä = maalista[listamuuttuja]
 
 print(päämäärä)
+print(f"The first country you land in is: {sijainti}! You have a lot of fun touring the different attractions there.")
+print(f"You have arrived to {sijainti} Airport and now you are to guess the next country.")
+printtivihje = haevihje(päämäärä)
+print(f"Your clue for your next country is: {printtivihje}")
 while True:
-    print(f"The first country you land in is: {sijainti}! You have a lot of fun touring the different attractions there.")
-    print(f"You have arrived to {sijainti} Airport and now you are to guess the next country.")
-    print("Your first clue:")
-    print(haevihje(päämäärä))
+    if rahat < 100:
+        print("You have ran out of money. Game over")
+        break
     pelaajavalinta()
+    visitedAirport1 = 0
+    visitedAirport2 = 1
+    kuljettumatka += int(calculateDistance(lentokenttälista[visitedAirport1], lentokenttälista[visitedAirport2]))
+    print(kuljettumatka)
+    visitedAirport1 += 1
+    visitedAirport2 += 1
 
