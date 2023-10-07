@@ -40,14 +40,18 @@ hints = (luxembourghints, norwayhints, polandhints, swedenhints, latviahints, li
          spainhints, albaniahints, bulgariahints, icelandhints, belgiumhints, germanyhints,
          estoniahints, finlandhints, ukhints, irelandhints, croatiahints, francehints,
          greecehints, italyhints, sloveniahints, czechrepublichints, maltahints, hungaryhints,
-         austriahints)
+         austriahints, portugalhints, romaniahints, switzerlandhints, northmacedoniahints, serbiahints,
+         montenegrohints, ukrainehints, belarushints, russiahints, slovakiahints, denmarkhints)
 
 countries = {"Luxembourg":luxembourghints, "Norway":norwayhints, "Poland":polandhints, "Sweden":swedenhints, "Latvia":latviahints,
              "Lithuania":lithuaniahints, "Spain":spainhints, "Albania":albaniahints, "Bulgaria":bulgariahints, "Iceland":icelandhints,
              "Belgium":belgiumhints, "Germany":germanyhints, "Estonia":estoniahints, "Finland":finlandhints, "United Kingdom" or "UK":ukhints,
              "Ireland":irelandhints, "Croatia":croatiahints, "France":francehints, "Greece":greecehints, "Italy":italyhints,
-             "Slovenia":sloveniahints, "Czech Republic":czechrepublichints, "Malta":maltahints, "Hungary":hungaryhints, "Austria":austriahints}
+             "Slovenia":sloveniahints, "Czech Republic":czechrepublichints, "Malta":maltahints, "Hungary":hungaryhints, "Austria":austriahints, "Portugal":portugalhints,
+             "Romania":romaniahints, "Switzerland":switzerlandhints, "Belarus":belarushints, "North Macedonia":northmacedoniahints, "Serbia":serbiahints, "Ukraine":ukrainehints,
+             "Montenegro":montenegrohints, "Russia":russiahints, "Slovakia":slovakiahints, "Denmark":denmarkhints}
 
 country_names = ["Luxembourg", "Norway", "Poland", "Sweden", "Latvia", "Lithuania", "Spain",
                  "Albania", "Bulgaria", "Iceland", "Belgium", "Germany", "Estonia", "Finland", "United Kingdom / UK"
-                 "Ireland", "Croatia", "France", "Greece", "Italy", "Slovenia", "Czech Republic", "Malta", "Hungary", "Austria"]
+                 "Ireland", "Croatia", "France", "Greece", "Italy", "Slovenia", "Czech Republic", "Malta", "Hungary", "Austria", "Portugal", "Romania"
+                 "Switzerland", "Belarus", "Serbia", "Ukraine", "Montenegro", "Russia", "Slovakia", "Denmark"]

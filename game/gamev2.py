@@ -1,5 +1,4 @@
 import random
-from haeVihje import haevihje
 from kuljettumatka import calculateDistance
 from maaPicker import maat
 from maaPicker import yhteys
@@ -11,9 +10,22 @@ def haevihje(päämäärä):
     vihjenyt = None
     for a in Vihjeet.countries:
         if a == päämäärä:
-            print(Vihjeet.countries[päämäärä][vihjeindeksi])
+            vihjenyt = {Vihjeet.countries[päämäärä][vihjeindeksi]}
             vihjeindeksi += 1
-    return
+    return vihjenyt
+
+'''def calculateDistance(port1, port2):
+    search1 = f"SELECT latitude_deg, longitude_deg FROM airport"
+    search1 += f" WHERE name = '{port1}';"
+    search2 = f"SELECT latitude_deg, longitude_deg FROM airport"
+    search2 += f" WHERE name = '{port2}';"
+    kursori = yhteys.cursor()
+    kursori.execute(search1)
+    tulos1 = kursori.fetchall()
+    kursori.execute(search2)
+    tulos2 = kursori.fetchall()
+    distance = geodesic(tulos1, tulos2).km
+    return distance'''
 
 
 def pelaajavalinta():
@@ -33,23 +45,27 @@ def pelaajavalinta():
         if syöte.capitalize() == "Buy":
             if vihjeindeksi <= 2:
                 print("New tip!")
-                haevihje(päämäärä)
+                printtivihje = haevihje(päämäärä)
+                print(f"{printtivihje}")
                 rahat -= 100
                 print(f"Your money: {rahat} euros")
+            #TÄhän alle se calculate
             else:
                 print(f"Your destination is {päämäärä}. You will be fined 100 euros")
                 rahat -= 100
-                print(rahat)
                 if rahat < 100:
                     print("Game Over")
                     break
                 print("Flying to your new destination...")
+                rahat -= 100
+                print(rahat)
                 sijainti = päämäärä
                 listamuuttuja += 1
                 päämäärä = maalista[listamuuttuja]
                 vihjeindeksi = 0
                 print("New tip: ")
-                haevihje(päämäärä)
+                printtivihje = haevihje(päämäärä)
+                print(f"{printtivihje}")
             if rahat < 100:
                 print("Your money ran out, game over")
                 break
@@ -70,13 +86,17 @@ def pelaajavalinta():
                 listamuuttuja += 1
                 päämäärä = maalista[listamuuttuja]
                 print(rahat)
+                print(f"Your first clue:")
+                printtivihje = haevihje(päämäärä)
+                print(f"{printtivihje}")
                 if rahat < 100:
                     print("You have made it to your destination, but your money ran out. Peli päättyy")
                     break
                 break
-            elif syöte2 != päämäärä and syöte2 in maalista:
-                print("Flying to your new destination...")
+            elif syöte2.capitalize() != päämäärä and syöte2.capitalize() in maalista:
+                #print("Flying to your new destination...") pitää työstää vielä
                 print("You guessed the wrong country!")
+                print("You have been fined 100 euros.")
                 rahat -= 100
                 print(f"Your money:{rahat}")
                 print("Type (buy) to buy a tip, or (guess) to guess a country: ")
@@ -150,3 +170,4 @@ while True:
     visitedAirport1 += 1
     visitedAirport2 += 1
 
+# While loopin ulkopuolelle sitten se funktio, joka laskee lentomatkat yhteen
