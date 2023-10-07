@@ -90,7 +90,7 @@ def pelaajavalinta():
                 printtivihje = haevihje(päämäärä)
                 print(f"{printtivihje}")
                 if rahat < 100:
-                    print("You have made it to your destination, but your money ran out. Peli päättyy")
+                    print("You have made it to your destination, but your money ran out. Game Over.")
                     break
                 break
             elif syöte2.capitalize() != päämäärä and syöte2.capitalize() in maalista:
@@ -104,7 +104,7 @@ def pelaajavalinta():
                 print("The country you entered is not an option")
                 syöte = input("Type (buy) to buy a tip, or (guess) to guess a country: ")
         else:
-            print("Shitty function")
+            print("Shitty command")
             syöte = input("Type (buy) to buy a tip, or (guess) to guess a country: ")
     return
 
