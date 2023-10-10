@@ -25,7 +25,7 @@ hungaryhints = ["1. This country is known by its traditional spicy meat soup", "
 austriahints = ["1. Samuli Edelmann has drunk wine in this country", "2. Most of the landscape of this country consists of the Alps", "3. In which country was Mozart born in?"]
 portugalhints = ["1. This country is known for its portwines", "2. This country is the 2016 football European champion", "3. This country is located at the tip of the Iberian peninsula"]
 romaniahints = ["1. The Carpathian mountain range runs through the middle of this country.", "2. The currency used in this country is leu", "3. The famous region of Transylvania is located in this country"]
-netherlandhints = ["1. This country is known for its EDM culture", "2. This country is known for its coffee shops", "3. This countrys capital is Amsterdam"]
+netherlandshints = ["1. This country is known for its EDM culture", "2. This country is known for its coffee shops", "3. This countrys capital is Amsterdam"]
 switzerlandhints = ["1. This country is well known for their policy of neutrality", "2. This country is well known for its culture of watch-making", "3. The Red Cross was founded in this country"]
 belarushints = ["1. This country's official dish is called draniki", "2. This country's president is the longest serving president in Europe", "3. This country's capital is Minsk"]
 northmacedoniahints = ["1. This country changed its name as recently as 2019", "2. This country’s flag depicts a sun.", "3. This country’s capital city is Skopje"]
@@ -41,17 +41,17 @@ hints = (luxembourghints, norwayhints, polandhints, swedenhints, latviahints, li
          estoniahints, finlandhints, ukhints, irelandhints, croatiahints, francehints,
          greecehints, italyhints, sloveniahints, czechrepublichints, maltahints, hungaryhints,
          austriahints, portugalhints, romaniahints, switzerlandhints, northmacedoniahints, serbiahints,
-         montenegrohints, ukrainehints, belarushints, russiahints, slovakiahints, denmarkhints)
+         montenegrohints, ukrainehints, belarushints, russiahints, slovakiahints, denmarkhints, netherlandshints)
 
-countries = {"Luxembourg":luxembourghints, "Norway":norwayhints, "Poland":polandhints, "Sweden":swedenhints, "Latvia":latviahints,
-             "Lithuania":lithuaniahints, "Spain":spainhints, "Albania":albaniahints, "Bulgaria":bulgariahints, "Iceland":icelandhints,
-             "Belgium":belgiumhints, "Germany":germanyhints, "Estonia":estoniahints, "Finland":finlandhints, "United Kingdom" or "UK":ukhints,
-             "Ireland":irelandhints, "Croatia":croatiahints, "France":francehints, "Greece":greecehints, "Italy":italyhints,
-             "Slovenia":sloveniahints, "Czech Republic":czechrepublichints, "Malta":maltahints, "Hungary":hungaryhints, "Austria":austriahints, "Portugal":portugalhints,
-             "Romania":romaniahints, "Switzerland":switzerlandhints, "Belarus":belarushints, "North Macedonia":northmacedoniahints, "Serbia":serbiahints, "Ukraine":ukrainehints,
-             "Montenegro":montenegrohints, "Russia":russiahints, "Slovakia":slovakiahints, "Denmark":denmarkhints}
+countries = {"luxembourg":luxembourghints, "norway":norwayhints, "poland":polandhints, "sweden":swedenhints, "latvia":latviahints,
+             "lithuania":lithuaniahints, "spain":spainhints, "albania":albaniahints, "bulgaria":bulgariahints, "iceland":icelandhints,
+             "belgium":belgiumhints, "germany":germanyhints, "estonia":estoniahints, "finland":finlandhints, "united kingdom":ukhints,
+             "ireland":irelandhints, "croatia":croatiahints, "france":francehints, "greece":greecehints, "italy":italyhints,
+             "slovenia":sloveniahints, "czech republic":czechrepublichints, "malta":maltahints, "hungary":hungaryhints, "austria":austriahints, "portugal":portugalhints,
+             "romania":romaniahints, "switzerland":switzerlandhints, "belarus":belarushints, "north macedonia":northmacedoniahints, "serbia":serbiahints, "ukraine":ukrainehints,
+             "montenegro":montenegrohints, "russia":russiahints, "slovakia":slovakiahints, "denmark":denmarkhints, "netherlands":netherlandshints}
 
-country_names = ["Luxembourg", "Norway", "Poland", "Sweden", "Latvia", "Lithuania", "Spain",
-                 "Albania", "Bulgaria", "Iceland", "Belgium", "Germany", "Estonia", "Finland", "United Kingdom / UK"
-                 "Ireland", "Croatia", "France", "Greece", "Italy", "Slovenia", "Czech Republic", "Malta", "Hungary", "Austria", "Portugal", "Romania"
-                 "Switzerland", "Belarus", "Serbia", "Ukraine", "Montenegro", "Russia", "Slovakia", "Denmark"]
+country_names = ["luxembourg", "norway", "poland", "sweden", "latvia", "lithuania", "spain",
+                 "albania", "bulgaria", "iceland", "belgium", "germany", "estonia", "finland", "united kingdom", "uk"
+                 "ireland", "croatia", "france", "greece", "italy", "slovenia", "czech republic", "malta", "hungary", "austria", "portugal", "romania"
+                 "switzerland", "belarus", "serbia", "ukraine", "montenegro", "russia", "slovakia", "denmark" , "north macedonia"]

@@ -79,6 +79,8 @@ def pelaajavalinta():
                 syöte2 = None
             elif syöte2.capitalize() == päämäärä:
                 print("Congratulations, you guessed the right country!")
+                print("You were rewarded 100 euros for answering correctly")
+                print("")
                 print("Flying to your new destination...")
                 sijainti = päämäärä
                 rahat += 100
@@ -146,14 +148,10 @@ rahat = 1000
 sijainti = maalista[listamuuttuja]
 listamuuttuja += 1
 
-print(rahat)
-print(maalista)
-print(lentokenttälista)
-print(sijainti)
 
 päämäärä = maalista[listamuuttuja]
 
-print(päämäärä)
+'''print(päämäärä)'''
 print(f"The first country you land in is: {sijainti}! You have a lot of fun touring the different attractions there.")
 print(f"You have arrived to {sijainti} Airport and now you are to guess the next country.")
 printtivihje = haevihje(päämäärä)
