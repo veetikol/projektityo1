@@ -14,18 +14,15 @@ def haevihje(päämäärä):
             vihjeindeksi += 1
     return vihjenyt
 
-'''def calculateDistance(port1, port2):
-    search1 = f"SELECT latitude_deg, longitude_deg FROM airport"
-    search1 += f" WHERE name = '{port1}';"
-    search2 = f"SELECT latitude_deg, longitude_deg FROM airport"
-    search2 += f" WHERE name = '{port2}';"
-    kursori = yhteys.cursor()
-    kursori.execute(search1)
-    tulos1 = kursori.fetchall()
-    kursori.execute(search2)
-    tulos2 = kursori.fetchall()
-    distance = geodesic(tulos1, tulos2).km
-    return distance'''
+def endmessage():
+    print(" ")
+    print("You had a lot of fun in your journey through Europe.")
+    print(" ")
+    print(f"However, you ended up flying a total of {kuljettumatka} kilometers")
+    print(" ")
+    print("Travelling with a plane is harmful for the environment, and you ended up using a lot of natural resources")
+    print(" ")
+    print("For your future travels, consider using other methods of travelling :)")
 
 
 def pelaajavalinta():
@@ -61,8 +58,12 @@ def pelaajavalinta():
                     print("Game Over")
                     break
                 print("Flying to your new destination, the ticket costs 100 euros...")
+                kuljettumatka += int(calculateDistance(str(lentokenttälista[visitedAirport1]), str(lentokenttälista[visitedAirport2])))
+                visitedAirport1 += 1
+                visitedAirport2 += 1
+                print(f"You have traveled {kuljettumatka} kilometers so far")
                 rahat -= 100
-                print(rahat)
+                print(f"Your money: {rahat}")
                 sijainti = päämäärä
                 listamuuttuja += 1
                 päämäärä = maalista[listamuuttuja]
@@ -95,6 +96,8 @@ def pelaajavalinta():
                 rahat += 100
                 vihjeindeksi = 0
                 listamuuttuja += 1
+                if listamuuttuja == 37:
+                    break
                 päämäärä = maalista[listamuuttuja]
                 print(f"Your money currently: {rahat}")
                 print(" ")
@@ -173,6 +176,7 @@ while True:
         break
     if listamuuttuja == 37:
         print("Congratulations, you have travelled through Europe. You have won the game!")
+        endmessage()
         break
     printtivihje = haevihje(päämäärä)
     print(f"Your clue for your next country is: ")
@@ -180,14 +184,6 @@ while True:
     print("")
     pelaajavalinta()
 
-print(" ")
-print("You had a lot of fun in your journey through Europe.")
-print(" ")
-print(f"However, you ended up flying a total of {kuljettumatka} kilometers")
-print(" ")
-print("Travelling with a plane is harmful for the environment, and you ended up using a lot of natural resources")
-print(" ")
-print("For your future travels, consider using other methods of travelling :)")
 
 
 # While loopin ulkopuolelle sitten se funktio, joka laskee lentomatkat yhteen
