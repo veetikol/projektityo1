@@ -37,6 +37,9 @@ def pelaajavalinta():
     global päämäärä
     global listamuuttuja
     global vihjeindeksi
+    global visitedAirport1
+    global visitedAirport2
+    global kuljettumatka
 
     while True:
         if rahat < 100:
@@ -79,11 +82,15 @@ def pelaajavalinta():
                 print(" ")
                 syöte = input("Type (buy) to buy a tip, or (guess) to guess a country: ")
                 syöte2 = None
-            elif syöte2.capitalize() == päämäärä:
+            elif syöte2.lower() == päämäärä:
                 print("Congratulations, you guessed the right country!")
                 print("You were rewarded 100 euros for answering correctly")
                 print("")
                 print("Flying to your new destination...")
+                kuljettumatka += int(calculateDistance(str(lentokenttälista[visitedAirport1]), str(lentokenttälista[visitedAirport2])))
+                visitedAirport1 += 1
+                visitedAirport2 += 1
+                print(f"You have traveled {kuljettumatka} kilometers so far")
                 sijainti = päämäärä
                 rahat += 100
                 vihjeindeksi = 0
@@ -95,7 +102,7 @@ def pelaajavalinta():
                     print("You have made it to your destination, but your money ran out. Game Over.")
                     break
                 break
-            elif syöte2.capitalize() != päämäärä and syöte2.capitalize() in maalista:
+            elif syöte2.lower() != päämäärä and syöte2.lower() in maalista:
                 #print("Flying to your new destination...") pitää työstää vielä
                 print("You guessed the wrong country!")
                 print("You have been fined 100 euros.")
@@ -148,6 +155,8 @@ listamuuttuja = 0
 vihjeindeksi = 0
 kuljettumatka = 0
 rahat = 1000
+visitedAirport1 = 0
+visitedAirport2 = 1
 sijainti = maalista[listamuuttuja]
 listamuuttuja += 1
 
@@ -170,12 +179,16 @@ while True:
     print(f"{printtivihje}")
     print("")
     pelaajavalinta()
-    visitedAirport1 = 0
-    visitedAirport2 = 1
-    kuljettumatka += int(calculateDistance(lentokenttälista[visitedAirport1], lentokenttälista[visitedAirport2]))
-    print(kuljettumatka)
-    visitedAirport1 += 1
-    visitedAirport2 += 1
+
+print(" ")
+print("You had a lot of fun in your journey through Europe.")
+print(" ")
+print(f"However, you ended up flying a total of {kuljettumatka} kilometers")
+print(" ")
+print("Travelling with a plane is harmful for the environment, and you ended up using a lot of natural resources")
+print(" ")
+print("For your future travels, consider using other methods of travelling :)")
+
 
 # While loopin ulkopuolelle sitten se funktio, joka laskee lentomatkat yhteen
 # Eli tehtävänä vielä pelaajavalinta-funktion läpikäyminen, lasketun matkan ilmoittaminen järkevästi
