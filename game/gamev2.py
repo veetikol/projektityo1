@@ -72,7 +72,6 @@ def pelaajavalinta():
                 printtivihje = haevihje(päämäärä)
                 print(f"{printtivihje}")
             if rahat < 100:
-                print("Your money ran out, game over")
                 break
             syöte = input("Type (buy) to buy a tip, or (guess) to guess a country: ")
         elif syöte.capitalize() == "Guess":
