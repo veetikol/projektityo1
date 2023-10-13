@@ -5,6 +5,5 @@ Engineers:
 Ville Kurikka,
 Veeti Kolanen, 
 Villiam Kuusisto, 
-Jesse "J3-ss3" Nieminen 
+Jesse Nieminen 
 
-Tästä tulee hulluu #kaikkiohtuun
