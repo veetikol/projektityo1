@@ -1,9 +1,7 @@
 import random
 from kuljettumatka import calculateDistance
 from maaPicker import maat
-from maaPicker import yhteys
 import Vihjeet
-from geopy.distance import geodesic
 
 def haevihje(päämäärä):
     global vihjeindeksi
@@ -16,18 +14,18 @@ def haevihje(päämäärä):
 
 def endmessage():
     print(" ")
-    print("You had a lot of fun in your journey through Europe.")
+    print(f"\033[92mYou had a lot of fun in your journey through Europe.\033[0m")
     print(" ")
-    print(f"However, you ended up flying a total of {kuljettumatka} kilometers")
+    print(f"\033[92mHowever, you ended up flying a total of \033[91m{kuljettumatka} kilometers\033[0m")
     print(" ")
-    print("Travelling with a plane is harmful for the environment, and you ended up using a lot of natural resources")
+    print(f"\033[92mTravelling with a plane is harmful for the environment, and you ended up using a lot of natural resources\033[0m")
     print(" ")
-    print("For your future travels, consider using other methods of travelling :)")
+    print(f"\033[92mFor your future travels, consider using other methods of travelling :)\033[0m")
 
 
 def pelaajavalinta():
-    print("You can either buy a new tip for 100 euros or guess a country")
-    syöte = input("Type (buy) to buy a tip or (guess) to guess a country: ")
+    print(f"\033[96mYou can either buy a new tip for 100 euros or guess a country\033[00m")
+    syöte = input("Type \033[94m(buy)\033[00m to buy a tip or \033[94m(guess)\033[00m to guess a country: ")
 
     global sijainti
     global rahat
@@ -45,53 +43,56 @@ def pelaajavalinta():
 
         if syöte.capitalize() == "Buy":
             if vihjeindeksi <= 2:
-                print("New tip!")
+                print("")
+                print(f"\033[92mNew tip!\033[00m")
                 printtivihje = haevihje(päämäärä)
-                print(f"{printtivihje}")
+                print(f"\033[93m{printtivihje}\033[00m")
                 rahat -= 100
-                print(f"Your money: {rahat} euros")
+                print(f"Your money: \033[92m{rahat} euros\033[0m")
+                print("")
             #TÄhän alle se calculate
             else:
-                print(f"Your destination is {päämäärä}. You will be fined 100 euros")
+                print("")
+                print(f"\033[91mYour destination is {päämäärä}. You will be fined 100 euros\033[0m")
                 rahat -= 100
                 if rahat < 100:
-                    print("Game Over")
+                    print(f"\033[91mGame Over\033[0m")
                     break
-                print("Flying to your new destination, the ticket costs 100 euros...")
+                print(f"\033[92mFlying to your new destination, the ticket costs 100 euros...\033[0m")
                 kuljettumatka += int(calculateDistance(str(lentokenttälista[visitedAirport1]), str(lentokenttälista[visitedAirport2])))
                 visitedAirport1 += 1
                 visitedAirport2 += 1
-                print(f"You have traveled {kuljettumatka} kilometers so far")
+                print(f"You have traveled \033[95m{kuljettumatka} kilometers\033[0m so far")
                 rahat -= 100
-                print(f"Your money: {rahat}")
+                print(f"Your money: \033[92m{rahat}\033[0m")
                 sijainti = päämäärä
                 listamuuttuja += 1
                 päämäärä = maalista[listamuuttuja]
                 vihjeindeksi = 0
-                print("New tip: ")
+                print(f"\033[92mNew tip!\033[0m")
                 printtivihje = haevihje(päämäärä)
-                print(f"{printtivihje}")
+                print(f"\033[93m{printtivihje}\033[0m")
             if rahat < 100:
-                print("Your money ran out, game over")
                 break
-            syöte = input("Type (buy) to buy a tip, or (guess) to guess a country: ")
+            syöte = input(f"Type \033[94m(buy)\033[0m to buy a tip, or \033[94m(guess)\033[0m to guess a country: ")
         elif syöte.capitalize() == "Guess":
-            syöte2 = input("Either write the name of the country or type (list) to print a list of possible countries: ")
+            syöte2 = input(f"Either write the name of the country or type \033[94m(list)\033[0m to print a list of possible countries: ")
             if syöte2.capitalize() == "List":
+                print(f"\033[95mList of countries:\033[00m")
                 for maa in maalista:
                     print(maa)
                 print(" ")
-                syöte = input("Type (buy) to buy a tip, or (guess) to guess a country: ")
+                syöte = input("Type \033[94m(buy)\033[00m to buy a tip, or \033[94m(guess)\033[00m to guess a country: ")
                 syöte2 = None
             elif syöte2.lower() == päämäärä:
-                print("Congratulations, you guessed the right country!")
-                print("You were rewarded 100 euros for answering correctly")
+                print(f"\033[92mCongratulations, you guessed the right country!\033[0m")
+                print("\033[96mYou were rewarded 100 euros for answering correctly\033[0m")
                 print("")
                 print("Flying to your new destination...")
                 kuljettumatka += int(calculateDistance(str(lentokenttälista[visitedAirport1]), str(lentokenttälista[visitedAirport2])))
                 visitedAirport1 += 1
                 visitedAirport2 += 1
-                print(f"You have traveled {kuljettumatka} kilometers so far")
+                print(f"You have traveled \033[95m{kuljettumatka} kilometers\033[0m so far")
                 sijainti = päämäärä
                 rahat += 100
                 vihjeindeksi = 0
@@ -99,32 +100,29 @@ def pelaajavalinta():
                 if listamuuttuja == 37:
                     break
                 päämäärä = maalista[listamuuttuja]
-                print(f"Your money currently: {rahat}")
+                print(f"Your money currently: \033[92m{rahat} euros\033[0m")
                 print(" ")
                 if rahat < 100:
                     print("You have made it to your destination, but your money ran out. Game Over.")
                     break
                 break
             elif syöte2.lower() != päämäärä and syöte2.lower() in maalista:
-                #print("Flying to your new destination...") pitää työstää vielä
-                print("You guessed the wrong country!")
-                print("You have been fined 100 euros.")
+                print("")
+                print(f"\033[91mYou guessed the wrong country!\033[0m")
+                print(f"\033[91mYou have been fined 100 euros.\033[0m")
                 rahat -= 100
-                print(f"Your money:{rahat}")
+                print(f"Your money: \033[92m{rahat} euros\033[0m")
                 print(" ")
-                syöte = input("Type (buy) to buy a tip, or (guess) to guess a country: ")
+                syöte = input(f"Type \033[94m(buy)\033[0m to buy a tip, or \033[94m(guess)\033[0m to guess a country: ")
             else:
-                print("The country you entered is not an option")
+                print(f"\033[91mThe country you entered is not an option\033[0m")
                 print(" ")
-                syöte = input("Type (buy) to buy a tip, or (guess) to guess a country: ")
+                syöte = input("Type \033[94m(buy)\033[0m to buy a tip, or \033[94m(guess)\033[0m to guess a country: ")
         else:
-            print("Unknown commnd, please try again")
+            print(f"\033[91mUnknown command, please try again\033[0m")
             print(" ")
-            syöte = input("Type (buy) to buy a tip, or (guess) to guess a country: ")
+            syöte = input("Type \033[94m(buy)\033[0m to buy a tip, or \033[94m(guess)\033[0m to guess a country: ")
     return
-
-
-
 
 def instructions():
     print("You are travelling in Europe. Your parents have planned a route for you through various countries, "
@@ -135,14 +133,14 @@ def instructions():
 
 while True:
     instructions()
-    readyInput = input("Are you ready to begin? (y/n): ")
+    readyInput = input(f"Are you ready to begin? (\033[92my\033[0m/\033[91mn\033[0m): ")
     if readyInput == "n":
         print("Here are the instructions again: ")
         instructions()
     else:
         break
-
-print("Your journey begins!")
+print("")
+print(f"\033[96mYour journey begins!\033[0m")
 
 sqlhaku = maat()
 random.shuffle(sqlhaku)
@@ -165,27 +163,19 @@ listamuuttuja += 1
 
 
 päämäärä = maalista[listamuuttuja]
-
-'''print(päämäärä)'''
-print(f"The first country you land in is: {sijainti}! You have a lot of fun touring the different attractions there.")
-print(f"You have arrived at {lentokenttälista[visitedAirport1]} of {sijainti} and now you are to guess the next country.")
+print(f"The first country you land in is: \033[91m{sijainti}\033[0m! You have a lot of fun touring the different attractions there.")
+print(f"You have arrived at \033[94m{lentokenttälista[visitedAirport1]}\033[0m of \033[91m{sijainti}\033[0m and now you are to guess the next country.")
 print(" ")
 while True:
     if rahat < 100:
-        print("You have ran out of money. Game over")
+        print(f"\033[91mYou have ran out of money. Game over\033[0m")
         break
     if listamuuttuja == 37:
-        print("Congratulations, you have travelled through Europe. You have won the game!")
+        print(f"\033[92mCongratulations, you have travelled through Europe. You have won the game!\033[0m")
         endmessage()
         break
     printtivihje = haevihje(päämäärä)
     print(f"Your clue for your next country is: ")
-    print(f"{printtivihje}")
+    print(f"\033[93m{printtivihje}\033[0m")
     print("")
     pelaajavalinta()
-
-
-
-# While loopin ulkopuolelle sitten se funktio, joka laskee lentomatkat yhteen
-# Eli tehtävänä vielä pelaajavalinta-funktion läpikäyminen, lasketun matkan ilmoittaminen järkevästi
-# Lisäksi pitää ratkoa se UK ja pohjois-macedonia-ongelma
